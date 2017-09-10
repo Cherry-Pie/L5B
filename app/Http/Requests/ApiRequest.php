@@ -23,7 +23,7 @@ class ApiRequest extends FormRequest
         if ($this->ajax() || $this->wantsJson()) {
             throw new ValidationException(
                 $validator,
-                new JsonResponse(['errors' => $this->formatErrors($validator), 'message' => trans('api_general.validation_errors'), 'error' => true], 200)
+                new JsonResponse(['errors' => $this->formatErrors($validator), 'message' => trans('api.validation_errors'), 'error' => true], 200)
             );
         }
 

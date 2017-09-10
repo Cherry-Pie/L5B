@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Http\Traits\ApiResponseTrait;
 use Tymon\JWTAuth\Http\Middleware\Authenticate;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
