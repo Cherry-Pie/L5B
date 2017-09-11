@@ -23,6 +23,10 @@ class JwtAuthenticate extends Authenticate
      */
     public function handle($request, Closure $next)
     {
+        if (in_array('api_auth_skip', $request->route()->getAction()['middleware'])) {
+            return $next($request);
+        }
+        
         try {
             $this->authenticate($request);
         } catch (UnauthorizedHttpException $e) {
