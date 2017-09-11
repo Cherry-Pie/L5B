@@ -4,7 +4,7 @@ namespace App\Http\Traits;
 
 trait ApiResponseTrait
 {
-    public function success($data, $message = '')
+    public function success($data = [], $message = '')
     {
         return response()->json([
             'message' => $message, 
@@ -13,7 +13,7 @@ trait ApiResponseTrait
         ]);
     }
     
-    public function fail($message, $code = 500)
+    public function fail($message = '', $code = 500)
     {
         return response()->json([
             'message' => $message, 
