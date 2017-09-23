@@ -23,7 +23,9 @@ class JwtAuthenticate extends Authenticate
      */
     public function handle($request, Closure $next)
     {
-        if (in_array('api_auth_skip', $request->route()->getAction()['middleware'])) {
+        $middlewares = !$request->route()->getAction();
+        $middlewares = isset($middlewares['middleware']) ? $middlewares['middleware'] : [];
+        if (in_array('api_auth_skip', $middlewares)) {
             return $next($request);
         }
         
