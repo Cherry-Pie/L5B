@@ -164,7 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         
         Caffeinated\Modules\ModulesServiceProvider::class,
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Irazasyed\JwtAuthGuard\JwtAuthGuardServiceProvider::class,
         Yaro\ApiDocs\ServiceProvider::class,
 
